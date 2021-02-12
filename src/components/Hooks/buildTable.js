@@ -1,1 +1,0 @@
-const CARDS = 20;

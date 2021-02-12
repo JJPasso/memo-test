@@ -1,5 +1,33 @@
-.carta {
-    width: 125px;
-    height: 125px;
-    background-color: #ffb300;
+.flip-container {
+    perspective: 1000px;
+    display: inline-block;
+    border: 1px solid white;
+    background: black;
+}
+
+.flip-container.flipped .flipper {
+    transform: rotateX(1000deg);
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.back {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
 }
